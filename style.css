@@ -252,9 +252,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Certificate image (right side of the cert card) */
 .cert-img {
   width: 100%;
-  height: 12rem;
-  object-fit: cover;
+  height: auto;             /* shows the whole certificate, nothing cropped */
+  object-fit: contain;
   display: block;
+  padding: 0.5rem;
+  background-color: #f8fafc;
   border-radius: 0 0 6px 0;
 }
 
