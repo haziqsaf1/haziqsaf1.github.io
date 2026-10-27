@@ -1,0 +1,267 @@
+/* ==========================================
+   PORTFOLIO STYLES
+   Change the colours in :root and the whole site updates.
+   ========================================== */
+
+:root {
+  --accent: #2563eb;        /* main blue (buttons, links, highlights) */
+  --accent-dark: #1d4ed8;   /* darker blue for hover */
+  --accent-2: #14b8a6;      /* teal, used for the title underline */
+  --navy: #0f172a;          /* dark colour (footer, headings) */
+  --text: #1f2937;          /* main text colour */
+  --tint: #eff6ff;          /* light blue tint for alternating sections */
+  --tag-bg: #dbeafe;        /* skill tag background */
+  --tag-text: #1e40af;      /* skill tag text */
+}
+
+/* ==========================================
+   DESKTOP SCALING
+   Almost everything is sized in "rem", so raising the base font size
+   below makes the WHOLE site larger on big screens.
+   Want it bigger or smaller? Change these numbers.
+   ========================================== */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;                       /* phones / tablets */
+}
+@media (min-width: 1200px) { html { font-size: 20px; } }   /* laptops */
+@media (min-width: 1600px) { html { font-size: 23px; } }   /* desktop monitors */
+@media (min-width: 2000px) { html { font-size: 27px; } }   /* very large screens */
+
+body {
+  color: var(--text);
+  padding-top: 5.5rem;      /* space for the fixed navbar */
+  font-size: 1.2rem;
+  line-height: 1.65;
+}
+
+/* Wider page with generous side padding on desktop */
+/* Full-width content: it stretches across the screen and only keeps a
+   small margin at the left and right. Change the rem values to adjust. */
+.container {
+  max-width: 100% !important;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 992px)  { .container { padding-left: 2rem; padding-right: 2rem; } }
+@media (min-width: 1400px) { .container { padding-left: 3rem; padding-right: 3rem; } }
+
+section, header {
+  scroll-margin-top: 5rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+.accent-text {
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--navy);
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.navbar-brand {
+  color: var(--accent) !important;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: var(--navy);
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding-left: 0.9rem !important;
+  padding-right: 0.9rem !important;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding: 0.7rem 1.5rem;
+}
+
+.btn-sm {
+  font-size: 0.95rem;
+  padding: 0.5rem 1.1rem;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #fff;
+}
+
+.btn-outline-accent {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-outline-accent:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #eff6ff 0%, #ecfeff 100%);
+}
+
+.hero h1 {
+  font-size: 3.6rem;
+}
+
+.headline {
+  color: var(--accent) !important;
+  font-size: 1.65rem;
+}
+
+.hero p {
+  font-size: 1.35rem;
+  max-width: 75rem;
+}
+
+/* Profile photo: round with a white border. */
+.hero-img {
+  width: 20rem;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 7px solid #fff;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
+}
+
+/* Hero icon buttons */
+.hero .btn-outline-dark,
+.hero .btn-outline-primary {
+  padding: 0.7rem 1rem;
+}
+
+.hero .bi {
+  font-size: 1.4rem;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 5rem 0;
+}
+
+.section-alt {
+  background-color: var(--tint);
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2.25rem;
+  padding-bottom: 0.7rem;
+  position: relative;
+}
+
+/* Small coloured underline under each title */
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 4rem;
+  height: 5px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.section-title-center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ---------- About ---------- */
+.gmi-logo {
+  height: 5.5rem;
+  width: auto;
+}
+
+/* ---------- Skill / tool tags ---------- */
+.skill-badge {
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5em 0.8em;
+  margin: 0 6px 10px 0;
+  display: inline-block;
+}
+
+/* ---------- Cards ---------- */
+.project-card,
+.cert-card {
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid var(--accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover,
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.18);
+}
+
+.project-card .card-body,
+.cert-card .card-body {
+  padding: 1.4rem;
+}
+
+.card-img-short {
+  height: 14rem;
+  object-fit: cover;
+}
+
+.project-card .card-title {
+  font-size: 1.4rem;
+}
+
+.project-card .card-text {
+  font-size: 1.15rem;
+}
+
+.project-card .text-muted {
+  font-size: 1rem;
+}
+
+/* Certificate image (right side of the cert card) */
+.cert-img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  display: block;
+  border-radius: 0 0 6px 0;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: var(--navy);
+  color: #cbd5e1;
+  font-size: 1rem;
+  padding: 1.5rem 0;
+}
